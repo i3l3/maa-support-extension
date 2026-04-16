@@ -13,7 +13,8 @@ import { checkMaaAssistantArknights, isMaaAssistantArknights } from './utils/fs'
 sms.install()
 
 export async function activate(context: vscode.ExtensionContext) {
-  setLocale(vscode.env.language.startsWith('zh') ? 'zh' : vscode.env.language.startsWith('ko') ? 'ko' : 'en')
+  const lang = vscode.env.language
+  setLocale(lang.startsWith('zh') ? 'zh' : lang.startsWith('ko') ? 'ko' : 'en')
 
   const channel = vscode.window.createOutputChannel('Maa')
   context.subscriptions.push(channel)
