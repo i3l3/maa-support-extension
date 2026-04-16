@@ -68,9 +68,9 @@ export let isMaaAssistantArknights = false
 export let pipelineSuffix = 'pipeline'
 export let imageSuffix = 'image'
 export function checkMaaAssistantArknights() {
-  // TODO: 根据interface来判断，但是得到处传播下，而且得支持修改
+  // TODO: Determine based on interface, but it needs to be propagated everywhere and support modification
   const root = currentWorkspace()
-  // 很蠢，但是能用
+  // Naive, but it works
   if (root && existsSync(path.join(root.fsPath, 'src', 'MaaCore'))) {
     isMaaAssistantArknights = true
     pipelineSuffix = 'tasks'

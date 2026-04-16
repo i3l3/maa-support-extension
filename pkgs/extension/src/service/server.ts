@@ -17,7 +17,7 @@ import { WebviewLaunchPanel } from './webview/launch'
 
 export type IpcType = MarkApis<SubToHostApis, HostToSubApis>
 
-// 简单糊一下, 在这个文件里面把类型抹掉
+// Quick hack to erase types in this file
 // eslint-disable-next-line @typescript-eslint/no-namespace
 declare namespace globalThis {
   let maa: unknown | undefined

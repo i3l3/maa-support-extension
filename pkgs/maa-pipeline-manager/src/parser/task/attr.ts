@@ -1,5 +1,5 @@
 export type TaskAttrInfo<Keys extends string> = {
-  // 节点名称的偏移
+  // Offset of the node name
   offset: number
   attrs: {
     [key in Keys]?: boolean

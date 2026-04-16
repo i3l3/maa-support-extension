@@ -249,7 +249,7 @@ export class LayerInfo {
       const parts = info.info.parts
 
       if (!upper) {
-        // 覆盖任务时忽略默认值
+        // Ignore default values when overriding a task
         const reco = ('$' + (parts.recoType?.value ?? 'DirectHit')) as TaskName
         const act = ('$' + (parts.actType?.value ?? 'DoNothing')) as TaskName
 

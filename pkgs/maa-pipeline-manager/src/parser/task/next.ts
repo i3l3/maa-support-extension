@@ -38,7 +38,7 @@ function parseSingle(node: Node, info: TaskInfo, ctx: TaskParseContext) {
       } else if (key === 'anchor' && isBool(obj)) {
         ref.attrs.attrs.Anchor = obj.value
       }
-      // 其实应该填unknown的，但是格式不一样，而且对象模式deprecated了，就算了
+      // Should technically be 'unknown', but the format differs and object mode is deprecated anyway
     }
     if (loc) {
       info.refs.push({
