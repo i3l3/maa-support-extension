@@ -117,7 +117,7 @@ export function mergeMultiPathTasks(
   const last = tasks.pop()!
 
   if (last.task.baseTask) {
-    // 神秘的逃逸逻辑
+    // Mysterious escape logic
     if (last.task.baseTask === '#none') {
       delete last.task.baseTask
       delete last.trace.baseTask
@@ -127,7 +127,7 @@ export function mergeMultiPathTasks(
 
   const prev = mergeMultiPathTasks(tasks)
 
-  // 就是直接覆盖
+  // Direct override
   prev.self = last.self
   for (const [key, val] of Object.entries(last.task)) {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -155,7 +155,7 @@ export function applyParentToTask(
     if (prev) {
       const newPrev: MaaTaskExpr[] = []
       for (const expr of prev) {
-        // 这就是 MAA
+        // This is MAA
         newPrev.push((parent.join('@') + expr) as MaaTaskExpr)
       }
       clonedTask.task[key] = newPrev

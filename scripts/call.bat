@@ -1,5 +1,5 @@
 @echo off
-REM 获取 git.exe 的路径
+REM Get the path to git.exe
 for /f "delims=" %%G in ('where git') do (
     set "GIT_CMD_PATH=%%G"
     goto found
@@ -9,14 +9,14 @@ echo Git not found!
 exit /b 1
 
 :found
-REM 提取 Git 安装路径
+REM Extract the Git installation path
 set "GIT_ROOT=%GIT_CMD_PATH:cmd\git.exe=%"
 set "BASH_PATH=%GIT_ROOT%bin\bash.exe"
 
-REM 获取当前脚本路径和名称
+REM Get the current script path and name
 set "SCRIPT_DIR=%~dp0"
 set "SCRIPT_NAME=%~n0.sh"
 set "SH_FILE=%SCRIPT_DIR%%SCRIPT_NAME%"
 
-REM 执行 bash 脚本
+REM Execute the bash script
 "%BASH_PATH%" "%SH_FILE%"

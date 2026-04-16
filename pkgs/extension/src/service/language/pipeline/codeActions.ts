@@ -80,7 +80,7 @@ export class PipelineCodeActionsProvider
 
         // if (!found) {
         //   vscode.window.showWarningMessage(
-        //     `无法为文件 ${path.basename(file)} 找到合适的插入位置, 请手动补充`
+        //     `Cannot find a suitable insertion position for file ${path.basename(file)}, please add it manually`
         //   )
         // }
 

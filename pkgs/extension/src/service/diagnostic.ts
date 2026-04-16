@@ -32,7 +32,7 @@ class DiagnosticScanner extends FlushHelper {
       this.flushDirty()
     }, 60000)
 
-    // 启动之后刷一次
+    // Flush once after startup
     setTimeout(() => {
       this.flushDirty()
     }, 5000)

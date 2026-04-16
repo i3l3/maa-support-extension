@@ -32,7 +32,7 @@ export type MaaTaskMatchTemplate = {
   template?: string | string[]
   templThreshold?: number | number[]
   maskRange?: [number, number]
-  colorScales?: unknown // 麻烦的玩意，不写了
+  colorScales?: unknown // Complicated thing, skip for now
   colorWithClose?: boolean
   method?: 'Ccoeff' | 'RGBCount' | 'HSVCount'
 }
@@ -54,7 +54,7 @@ export type MaaTaskFeatureMatch = {
   detector?: 'SIFT' | 'ORB' | 'BRISK' | 'KAZE' | 'AKAZE'
 }
 
-// 文档里面写的是还必须是JustReturn，但是好像只有一个用例，随便了
+// The docs say it must also be JustReturn, but there seems to be only one use case, so it doesn't matter
 export type MaaTaskInput = {
   inputText?: string
 }

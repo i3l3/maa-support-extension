@@ -265,7 +265,7 @@ class MaaEvalContextImpl {
 
     context.taskChain.push(key)
 
-    // 禁用flush，并且禁用回退
+    // Disable flush and disable fallback
     const infos = this.delegate.query(task).map(([obj, anchor]) => {
       const selfAnchor: MaaTraceAnchor = {
         task: name,
@@ -282,7 +282,7 @@ class MaaEvalContextImpl {
     const segs = task.split('@')
 
     if (infos.length === 0) {
-      // 没有找到直接定义，递归提取@
+      // No direct definition found; recursively extract @
       if (segs.length === 1) {
         this.delegate.error.cannotFindTask(task, parent)
         context.taskChain.pop()
@@ -294,11 +294,11 @@ class MaaEvalContextImpl {
       context.taskChain.pop()
       return result
     } else {
-      // 找到定义了，先合并多文件
+      // Definition found; merge multi-file entries first
       const info = mergeMultiPathTasks(infos)
 
       if (info.task.baseTask || segs.length === 1) {
-        // 有 baseTask 或者没有 @，就不用递归了
+        // Has baseTask or no @, so no recursion needed
         const result = applyParentToTask(this.resolveBaseTask(info, context), parent)
         if (result) {
           this.cache[name] = result
@@ -322,13 +322,13 @@ class MaaEvalContextImpl {
             return null
           }
 
-          // 没有 baseTask，一定是 resolved
+          // No baseTask, must be resolved
           result = applyParentToTask(
             mergeTask(baseWithSeg, info as MaaTaskWithTraceInfo<MaaTaskBaseResolved>, '@'),
             parent
           )
         } else {
-          // 没有 baseTask，一定是 resolved
+          // No baseTask, must be resolved
           result = applyParentToTask(info as MaaTaskWithTraceInfo<MaaTaskBaseResolved>, parent)
         }
         if (result) {

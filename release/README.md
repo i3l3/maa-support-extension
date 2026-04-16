@@ -48,6 +48,30 @@
 - Take screenshots (Relying on controllers for screenshot ability)
 - Crop images
 
+## MaaFramework/MaaAssistantArknights 프로젝트를 위한 기능:
+
+> 컨트롤 패널은 왼쪽 사이드바의 설정 아이콘과 유사한 패널에 있습니다.
+>
+> 모든 기능은 `interface.json` 설정을 기반으로 합니다.
+>
+> 익스텐션은 열린 폴더의 루트에 `src/MaaCore` 폴더가 있는지 확인하여 MaaAssistantArknights 프로젝트인지 판단합니다.
+
+- 시맨틱 리소스 분석
+  - 작업 정의 조회
+  - 작업 참조 조회
+  - 작업 자동 완성
+  - 이미지 경로 자동 완성
+  - 작업 진단
+  - 이미지 경로 진단
+  - 다중 경로 리소스 지원
+- MaaPiCli 기능 (MaaFramework 프로젝트 전용)
+  - 컨트롤러 선택
+  - 리소스 선택
+  - 작업 추가 및 관리
+  - 작업 실행
+- 스크린샷 캡처 (컨트롤러의 스크린샷 기능에 의존)
+- 이미지 자르기
+
 ## 提供的vscode命令
 
 使用 Ctrl Shift P (MacOS下 Command Shift P) 打开命令面板后搜索使用
@@ -93,3 +117,27 @@ Use Ctrl Shift P (Command Shift P for MacOS) to open command panel and search
   - Download and change the version of MaaFramework used by extension.
 - Maa: select fetch registry
   - Select the mirrors to download MaaFramework used by extension.
+
+## 제공되는 vscode 명령어
+
+Ctrl Shift P (MacOS에서는 Command Shift P)로 명령 팔레트를 열고 검색하여 사용
+
+- Maa: Maa 로그 열기
+  - MaaFramework의 로그를 엽니다.
+- Maa: 플러그인 로그 열기
+  - 익스텐션의 로그를 엽니다.
+- Maa: 작업으로 이동
+  - 특정 작업을 검색하고 이동합니다.
+- Maa: 작업 실행
+  - interface 설정을 기반으로 인스턴스를 생성하고 지정된 작업을 실행합니다.
+- Maa: interface 실행
+  - interface 설정을 기반으로 인스턴스를 생성하고 설정된 모든 작업을 실행합니다.
+- Maa: 스크린샷 도구 열기
+  - 스크린샷 및 이미지 자르기를 위한 Webview를 엽니다.
+- Maa: 컨트롤 패널 표시
+  - 컨트롤 패널을 표시하고 포커스합니다.
+- Maa: MaaFramework 버전 선택
+  - 익스텐션에서 사용하는 MaaFramework를 다운로드하고 버전을 변경합니다.
+- Maa: 다운로드 소스 선택
+  - 익스텐션에서 사용하는 MaaFramework를 다운로드할 미러 소스를 선택합니다.
+

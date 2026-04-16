@@ -8,7 +8,7 @@ import type { TaskAttrInfo } from './attr'
 
 export type TaskMaaTaskRef = {
   task: TaskName
-  taskSuffix: TaskName // 从当前位置到最右边
+  taskSuffix: TaskName // From the current position to the rightmost
   offset: number
   length: number
 }
@@ -64,14 +64,14 @@ export type TaskDeclInfo = {
 
 export type TaskNextRefInfo = {
   type: 'task.next'
-  target: TaskName // 有可能是 AnchorName
+  target: TaskName // Could be an AnchorName
   objMode: boolean
   attrs: TaskAttrInfo<'JumpBack' | 'Anchor'>
 }
 
 export type TaskTargetRefInfo = {
   type: 'task.target'
-  target: TaskName // 有可能是 AnchorName
+  target: TaskName // Could be an AnchorName
   attrs: TaskAttrInfo<'Anchor'>
 }
 
@@ -82,7 +82,7 @@ export type TaskAnchorRefInfo = {
 
 export type TaskRoiRefInfo = {
   type: 'task.roi'
-  target: TaskName // 有可能是 subname或者AnchorName
+  target: TaskName // Could be a subname or AnchorName
   attrs: TaskAttrInfo<'Anchor'>
   prev: StringNode[]
   task: TaskName

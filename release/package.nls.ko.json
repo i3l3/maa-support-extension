@@ -1,0 +1,15 @@
+{
+  "maa.command.open-maa-log": "Maa: Maa 로그 열기",
+  "maa.command.open-ext-log": "Maa: 플러그인 로그 열기",
+  "maa.command.goto-task": "Maa: 작업으로 이동",
+  "maa.command.launch-task": "Maa: 작업 실행",
+  "maa.command.launch-interface": "Maa: interface 실행",
+  "maa.command.open-crop": "Maa: 스크린샷 도구 열기",
+  "maa.command.reveal-control-panel": "Maa: 컨트롤 패널 표시",
+  "maa.command.native.select-maa": "Maa: MaaFramework 버전 선택",
+  "maa.command.native.select-registry": "Maa: 다운로드 소스 선택",
+  "maa.view.control-panel.title": "Maa 컨트롤 패널",
+  "maa.setting.output-level": "Maa 출력 패널 로그 레벨 (재시작 후 적용)",
+  "maa.setting.agent-timeout": "Maa Agent 실행 타임아웃 (ms), -1로 비활성화.",
+  "maa.setting.launch-analyzer-url": "Maa Launch 패널의 Analyzer iframe 주소."
+}

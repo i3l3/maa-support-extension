@@ -5,7 +5,7 @@ export type AbsolutePath = string & { __brand: 'AbsolutePath' }
 
 export type TaskName = string & { __brand: 'TaskName' }
 export type AnchorName = string & { __brand: 'AnchorName' }
-// 移除了 image/ 开头的相对路径
+// Relative paths starting with image/ have been removed
 export type ImageRelativePath = string & { __brand: 'ImagePath' }
 
 export function joinPath(

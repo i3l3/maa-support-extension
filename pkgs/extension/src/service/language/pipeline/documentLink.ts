@@ -80,7 +80,7 @@ export class PipelineDocumentLinkProvider
         result.push(
           new vscode.DocumentLink(convertRange(document, ref.location), vscode.Uri.file(full))
         )
-        break // 只要最顶层的最匹配的那个
+        break // Only keep the topmost best match
       }
     }
 

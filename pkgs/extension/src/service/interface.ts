@@ -197,7 +197,7 @@ export class InterfaceService extends BaseService {
 
     let ctrlFixed = false
     if (typeof this.interfaceConfigJson.controller === 'object') {
-      // 老版本插件使用的是对象, 兼容下
+      // Old plugin versions used an object; maintain compatibility
       ctrlFixed = true
       fixConfig.controller = (this.interfaceConfigJson.controller as { name: string }).name
     }
@@ -318,11 +318,11 @@ export class InterfaceService extends BaseService {
 
   async buildRuntime(skipTask = false) {
     if (!(await serverService.fetchConstants())) {
-      return '初始化失败'
+      return 'Init failed'
     }
 
     if (!rootService.activeResource) {
-      return '无interface'
+      return 'No interface'
     }
     const projectDir = vscode.Uri.joinPath(
       rootService.activeResource.workspace,
@@ -342,7 +342,7 @@ export class InterfaceService extends BaseService {
 
     const ctrlRt = await this.buildControllerRuntime()
     if (!ctrlRt) {
-      return '构建controller失败'
+      return 'Build controller failed'
     }
     result.controller = ctrlRt
 

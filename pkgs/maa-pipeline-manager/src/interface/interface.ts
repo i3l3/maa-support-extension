@@ -43,10 +43,10 @@ class MaaEvalDelegateImpl extends MaaEvalDelegate {
     }
 
     const infos = topLayer.getTask(task as TaskName, false)
-    infos.reverse() // 内部需要从底层到上层
+    infos.reverse() // Internally requires bottom-to-top ordering
     return infos.map(({ layer, infos }) => {
       const info = infos[0]
-      // 这里硬编码了下逻辑
+      // Logic is hardcoded here
       const match = /resource\/global\/(.+)\//.exec(layer.root)
       const anchor = match ? match[1] : 'Official'
       return [info.obj as MaaTask, anchor]
@@ -272,7 +272,7 @@ export class InterfaceBundle extends EventEmitter<{
     if (ctrlInfo) {
       finalPaths.push(...ctrlInfo.attachs)
     }
-    // 这里没去重, 主要是去重的定义不清晰; 之后看有说法再改
+    // No deduplication here; the definition of deduplication is unclear and can be revisited later
 
     if (finalPaths.length > 0) {
       if (JSON.stringify(this.paths) === JSON.stringify(finalPaths)) {

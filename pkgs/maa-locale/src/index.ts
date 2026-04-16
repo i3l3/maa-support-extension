@@ -1,8 +1,9 @@
 import localeEn from './locale.en'
+import localeKo from './locale.ko'
 import localeZhCn from './locale.zh-cn'
 
 type LocaleIndex = keyof typeof localeEn
-export type LocaleType = 'zh' | 'en'
+export type LocaleType = 'zh' | 'en' | 'ko'
 
 type CountBrace<
   Str extends string,
@@ -12,9 +13,15 @@ type CountBrace<
 export let locale: LocaleType = 'zh'
 let localeDict: Record<LocaleIndex, string> = localeZhCn
 
-export function setLocale(lec: 'zh' | 'en') {
+export function setLocale(lec: 'zh' | 'en' | 'ko') {
   locale = lec
-  localeDict = locale === 'zh' ? localeZhCn : localeEn
+  if (locale === 'zh') {
+    localeDict = localeZhCn
+  } else if (locale === 'ko') {
+    localeDict = localeKo
+  } else {
+    localeDict = localeEn
+  }
 }
 
 export function t<K extends LocaleIndex>(key: K, ...args: CountBrace<(typeof localeEn)[K]>) {

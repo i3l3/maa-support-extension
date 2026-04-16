@@ -1,6 +1,7 @@
 import { computed, ref } from 'vue'
 
 import localeEn from './locale.en'
+import localeKo from './locale.ko'
 import localeZhCn from './locale.zh-cn'
 
 type LocaleIndex = keyof typeof localeEn
@@ -10,11 +11,13 @@ type CountBrace<
   Cnt extends string[] = []
 > = Str extends `${infer _L}{${Cnt['length']}}${infer _R}` ? CountBrace<Str, [...Cnt, string]> : Cnt
 
-export const vscodeLocale = ref<'zh' | 'en'>('zh')
+export const vscodeLocale = ref<'zh' | 'en' | 'ko'>('zh')
 
-const locale = computed<Record<LocaleIndex, string>>(() =>
-  vscodeLocale.value === 'zh' ? localeZhCn : localeEn
-)
+const locale = computed<Record<LocaleIndex, string>>(() => {
+  if (vscodeLocale.value === 'zh') return localeZhCn
+  if (vscodeLocale.value === 'ko') return localeKo
+  return localeEn
+})
 
 export function t<K extends LocaleIndex>(key: K, ...args: CountBrace<(typeof localeEn)[K]>) {
   let str = locale.value[key]
